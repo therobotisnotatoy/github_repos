@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  post "/accounts", to: "accounts#create"
+  resources :accounts
 end
