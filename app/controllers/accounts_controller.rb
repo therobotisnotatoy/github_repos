@@ -1,25 +1,54 @@
 class AccountsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+
+  # def create
+  #   account = Account.create(
+  #     nick_name: params[:account][:nick_name],
+  #     user_name: params[:account][:user_name],
+  #     repos: params[:account][:repos]
+  #   )
+  #   redirect_to account_path(account)
+  # end
+  before_action :set_account, only: [:update, :destroy, :show, :edit]
+
+  def set_account
+    @account = Account.find(params[:id])
+  end
+
+  def account_params
+    params.require(:account).permit(:nick_name, :user_name, :repos)
+  end
 
   def create
-    Account.create(
-      nick_name: params[:account][:nick_name],
-      user_name: params[:account][:user_name],
-      repos: params[:account][:repos]
-    )
+    account = Account.create(account_params)
+    redirect_to account_path(account)
   end
 
   def update
-    @account = Account.find(params[:id])
     @account.update(
-      nick_name: params[:account][:nick_name],
+      nick_name: params[:nick_name],
       user_name: params[:account][:user_name],
       repos: params[:account][:repos]
     )
+    redirect_to account_path(account)
+  end
+
+  def destroy
+    @account.destroy
+    redirect_to account_path(accounts_path)
   end
 
   def show
-    @account = Account.find(params[:id])
+  end
+
+  def index
+    @accounts = Account.all
+  end
+
+  def new
+    @account = Account.new
+  end
+
+  def edit
   end
 
 end

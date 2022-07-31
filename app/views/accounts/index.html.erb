@@ -1,0 +1,12 @@
+<h1>Account manager</h1>
+
+<p><%= link_to "Add account", new_account_path %></p>
+
+<% @accounts.each do |account| %>
+  <p>
+    -->
+    <%= link_to "#{account.nick_name}", account_path(id: account.id) %>
+    <%= button_to "Edit", edit_account_path(account) %>
+    <%= button_to "Remove", account_path(account), method: :delete %>
+  </p>
+<% end %>

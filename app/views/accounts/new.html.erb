@@ -1,0 +1,11 @@
+<h1>Find account</h1>
+
+<%= form_with model: @account do |form| %>
+  <p>
+    <%= form.label :nick_name, "Nikname: " %>
+    <%= form.text_field :nick_name %>
+  </p>
+  <p>Name: <%= form.text_field :user_name %></p>
+  <p>Reps: <%= form.text_field :repos %></p>
+  <p><%= form.submit "Search"%></p>
+<% end %>
