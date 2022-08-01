@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_01_122824) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_173515) do
   create_table "accounts", force: :cascade do |t|
     t.text "nick_name"
     t.text "user_name"
@@ -21,8 +21,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_122824) do
 
   create_table "repos", force: :cascade do |t|
     t.text "repo_name"
+    t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "repos", "accounts"
 end
