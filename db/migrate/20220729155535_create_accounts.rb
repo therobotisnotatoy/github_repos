@@ -3,7 +3,6 @@ class CreateAccounts < ActiveRecord::Migration[7.0]
     create_table :accounts do |t|
       t.text :nick_name, index: true
       t.text :user_name
-      t.text :repos
 
       t.timestamps
     end

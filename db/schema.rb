@@ -10,14 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_29_155535) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_115842) do
   create_table "accounts", force: :cascade do |t|
     t.text "nick_name"
     t.text "user_name"
-    t.text "repos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nick_name"], name: "index_accounts_on_nick_name"
+  end
+
+  create_table "repos", force: :cascade do |t|
+    t.string "repo_name"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
