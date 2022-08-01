@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+5.times do
+
+  account = Account.create(
+    nick_name: Faker::Name.name,
+    user_name: Faker::Name.name,
+    repos: Faker::Name.name
+  )
+
+  5.times do
+    repo = Repo.create(
+      repo_name: Faker::Name.name
+    )
+  end
+
+end
