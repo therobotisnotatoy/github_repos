@@ -1,13 +1,5 @@
 class AccountsController < ApplicationController
 
-  # def create
-  #   account = Account.create(
-  #     nick_name: params[:account][:nick_name],
-  #     user_name: params[:account][:user_name],
-  #     repos: params[:account][:repos]
-  #   )
-  #   redirect_to account_path(account)
-  # end
   before_action :set_account, only: [:update, :destroy, :show, :edit]
 
   def set_account
