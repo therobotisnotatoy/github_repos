@@ -17,11 +17,11 @@ class AccountsController < ApplicationController
 
   def update
     @account.update(
-      nick_name: params[:nick_name],
+      nick_name: params[:account][:nick_name],
       user_name: params[:account][:user_name],
       repos: params[:account][:repos]
     )
-    redirect_to account_path(account)
+    redirect_to account_path(@account)
   end
 
   def destroy

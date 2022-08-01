@@ -6,7 +6,7 @@
   <p>
     -->
     <%= link_to "#{account.nick_name}", account_path(id: account.id) %>
-    <%= button_to "Edit", edit_account_path(account), method :updte %>
+    <%= button_to "Edit", edit_account_path(account), method: :get %>
     <%= button_to "Remove", account_path(account), method: :delete %>
   </p>
 <% end %>

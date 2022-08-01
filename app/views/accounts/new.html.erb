@@ -1,6 +1,7 @@
 <h1>Find account</h1>
 
 <%= form_with model: @account do |form| %>
+  <p><%= link_to "Homepage", accounts_path %></p>
   <p>
     <%= form.label :nick_name, "Nikname: " %>
     <%= form.text_field :nick_name %>
