@@ -26,15 +26,15 @@ test:
   encoding: unicode
   database: github_repos_test
   pool: 5
-  username: ENV["DB_USER"]
-  password: ENV["DB_KEY"]
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_KEY"] %>
   timeout: 5000
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: ENV["DB_NAME"]
+  database: <%= ENV["DB_NAME"] %>
   pool: 5
-  username: ENV["DB_USER"]
-  password: ENV["DB_KEY"]
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_KEY"] %>
   timeout: 5000
