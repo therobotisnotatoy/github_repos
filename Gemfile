@@ -58,6 +58,7 @@ group :development do
   gem "web-console"
   gem "graphql"
   gem "graphiql-rails"
+  gem "httparty"
   gem "faker"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

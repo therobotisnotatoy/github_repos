@@ -5,7 +5,9 @@
 <%= form_with model: @account do |form| %>
   <p>
     <%= form.label :nick_name, "Nikname: " %>
-    <%= form.text_field :nick_name, options = {:autofocus => true } %>
+    <%= form.text_field :nick_name %>
   </p>
-  <p><%= form.submit "Search"%></p>
+  <p>
+    <%= form.submit "Search"%>
+  </p>
 <% end %>
