@@ -10,20 +10,31 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: github_repos
+  pool: 5
+  username: ENV["DB_USER"]
+  password: ENV["DB_KEY"]
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: db/test.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: github_repos_test
+  pool: 5
+  username: ENV["DB_USER"]
+  password: ENV["DB_KEY"]
+  timeout: 5000
 
 production:
   adapter: postgresql
   encoding: unicode
   database: github_repos
   pool: 5
-  username: blog
+  username: ENV["DB_USER"]
   password: ENV["DB_KEY"]
+  timeout: 5000
