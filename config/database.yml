@@ -12,10 +12,10 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: github_repos
+  database: <%= ENV["DB_NAME"] %>
   pool: 5
-  username: ENV["DB_USER"]
-  password: ENV["DB_KEY"]
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_KEY"] %>
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
@@ -33,7 +33,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: github_repos
+  database: ENV["DB_NAME"]
   pool: 5
   username: ENV["DB_USER"]
   password: ENV["DB_KEY"]
