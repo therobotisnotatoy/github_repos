@@ -5,9 +5,3 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
-account = Account.create!(
-  nick_name: Faker::Name.name,
-  user_name: Faker::Name.name,
-  repos: Faker::Name.name
-)
