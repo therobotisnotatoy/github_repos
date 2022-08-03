@@ -26,4 +26,4 @@ production:
   database: github_repos
   pool: 5
   username: blog
-  password: 1234567
+  password: ENV["DB_KEY"]
